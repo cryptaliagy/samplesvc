@@ -1,0 +1,21 @@
+version: '3.5'
+services:
+  samplesvc:
+    build:
+      context: ..
+      dockerfile: devstack/Dockerfile
+    image: $SERVICE_NAME
+    working_dir: /code
+    volumes:
+      - ..:/code
+    ports:
+      - "$PORT:$PORT"
+    env_file:
+      - ../.flaskenv
+    environment:
+      - SECRET
+      - DB
+
+networks:
+  default:
+    name: $SERVICE_NAME
