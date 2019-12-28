@@ -18,4 +18,4 @@ services:
 
 networks:
   default:
-    name: $SERVICE_NAME
+    name: $APP_NAME
